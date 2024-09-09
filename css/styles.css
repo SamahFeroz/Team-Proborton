@@ -1,0 +1,24 @@
+/* Styling for Go Up and Go Down buttons */
+.scroll-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    background-color: #34D399;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-btn.down {
+    bottom: 110px;
+}
+
+.scroll-btn:hover {
+    background-color: #059669;
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Management System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center text-green-700">
+                        <img src="#" alt="logo" class="h-8 w-8 mr-2">
+                        <span class="font-bold text-xl">FarmBuddy</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-button" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+                
+                <!-- Primary Nav Links -->
+                <div id="nav-menu" class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="py-2 px-3 text-gray-700 hover:text-green-500">Home</a>
+                    <a href="#" class="py-2 px-3 text-gray-700 hover:text-green-500">Features</a>
+                    <a href="#" class="py-2 px-3 text-gray-700 hover:text-green-500">About</a>
+                    <a href="#" class="py-2 px-3 text-gray-700 hover:text-green-500">Contact</a>
+                    <!-- Login/Sign-up button -->
+                    <a href="login.html" class="py-2 px-3 bg-green-500 text-white rounded hover:bg-green-600">Login</a>
+                </div>
+            </div>
+    
+            <!-- Mobile Menu Items -->
+            <div id="mobile-menu" class="md:hidden">
+                <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">Home</a>
+                <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">Features</a>
+                <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">About</a>
+                <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">Contact</a>
+                <a href="login.html" class="block py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600">Login</a>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="bg-white py-20 fade-in">
+        <div class="container mx-auto flex flex-col md:flex-row items-center px-6">
+            <!-- Text -->
+            <div class="md:w-1/2">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Empowering Farmers with Data-Driven Solutions</h1>
+                <p class="text-gray-600 mb-6">Leverage NASA datasets to optimize water usage, predict weather changes, and safeguard crops from pests and diseases.</p>
+                <!-- Explore Features button with smooth scroll functionality -->
+                <a href="#key-features" class="py-3 px-6 bg-green-500 text-white rounded-lg hover:bg-green-600">Explore Features</a>
+            </div>
+            <!-- Image -->
+            <div class="md:w-1/2">
+                <img src="images/smart-modern-agricultural-technologies-on-tablet.png" alt="farming illustration" class="w-full h-auto">
+            </div>
+        </div>
+    </section>
+    <!-- Highlights Section (Key Features) -->
+    <section id="key-features" class="py-20 bg-gray-100 fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Key Features</h2>
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Predictive Climate Analytics Card -->
+                <div class="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden">
+                    <a href="predictive-climate-analytics.html">
+                        <img class="h-auto w-auto" src="images/smart-purple-humidity-icon.png" alt="Predictive Climate Analytics">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold text-gray-800">Predictive Climate Analytics</h3>
+                            <p class="text-gray-600">Real-time analysis and forecasts of weather and natural disasters.</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Soil Health and Crop Suitability Assessment Card -->
+                <div class="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden">
+                    <a href="soil-health-assessment.html">
+                        <img class="h-auto w-auto" src="images/dazzle-small-seedling-sprout-1.png" alt="Soil Health">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold text-gray-800">Soil Health Assessment</h3>
+                            <p class="text-gray-600">Comprehensive insights into soil conditions and crop suitability.</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- AI-Driven Plant Disease Detection Card -->
+                <div class="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden">
+                    <a href="plant-disease-detection.html">
+                        <img class="h-auto w-auto" src="images/casual-life-3d-monstera-plant-with-holes-in-white-pot.png" alt="AI-Driven Plant Disease Detection">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold text-gray-800">Plant Disease Detection</h3>
+                            <p class="text-gray-600">AI-based identification of plant diseases to prevent crop failures.</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- Pest Control Hardware Card -->
+                <div class="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden">
+                    <a href="pest-control-hardware.html">
+                        <img class="h-auto w-auto" src="images/mega-creator.png" alt="Pest Control Hardware">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold text-gray-800">Pest Control Hardware</h3>
+                            <p class="text-gray-600">Innovative hardware to manage pests and reduce pesticide usage.</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- Land Utilization and Economic Growth Card -->
+                <div class="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden">
+                    <a href="land-utilization.html">
+                        <img class="h-auto w-auto" src="images/land.png" alt="Land Utilization">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold text-gray-800">Land Utilization</h3>
+                            <p class="text-gray-600">Platform to lend or rent unused fertile lands, promoting growth.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+            <!-- Column 1: Contact -->
+            <div class="col">
+                <img class="logo mb-4" src="#" alt="FarmBuddy Logo" />
+                <h4 class="text-xl font-semibold">Contact</h4>
+                <p><strong>Address:</strong> Chittagong, Bangladesh.</p>
+                <p><strong>Phone:</strong> +8801823456789</p>
+                <div class="follow mt-4">
+                    <h4 class="text-xl font-semibold">Follow us</h4>
+                    <div class="icon mt-2">
+                        <a href="https://youtu.be/ZrA19_nHdaU?si=15NF1ywIj96QlOjK" class="text-white hover:text-red-500">
+                            <i class="fa-brands fa-youtube fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2: About -->
+            <div class="col">
+                <h4 class="text-xl font-semibold mb-4">About</h4>
+                <ul class="space-y-2">
+                    <li><a href="about.html" class="hover:underline">About us</a></li>
+                    <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                    <li><a href="contact.html" class="hover:underline">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: My Account -->
+            <div class="col">
+                <h4 class="text-xl font-semibold mb-4">My Account</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Sign In</a></li>
+                    <li><a href="#" class="hover:underline">Help</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="container mx-auto text-center text-white mt-8">
+            <p>©2024 Team Proborton. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Go Up and Go Down Buttons -->
+    <div id="goUp" class="scroll-btn">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    <div id="goDown" class="scroll-btn down">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <!-- JavaScript for smooth scroll and animations -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
