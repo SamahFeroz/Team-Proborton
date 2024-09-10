@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Health and Crop Suitability Assessment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .map-container {
+            height: 400px;
+            width: 100%;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Page Header -->
+    <header class="bg-green-600 text-white py-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">Soil Health & Crop Suitability</h1>
+            <p class="mt-2">Analyze soil moisture and condition to recommend crops and fertilizers</p>
+        </div>
+    </header>
+
+    <!-- Soil Data Section -->
+    <section class="container mx-auto py-10">
+        <h2 class="text-3xl font-bold text-center mb-6">Soil Data Collection</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card bg-white">
+                <h3 class="text-xl font-bold mb-2">Soil Moisture</h3>
+                <p>Current Soil Moisture: <strong>45%</strong></p>
+                <p>Region: <strong>Region 1</strong></p>
+            </div>
+            <div class="card bg-white">
+                <h3 class="text-xl font-bold mb-2">Soil pH Levels</h3>
+                <p>Current pH Level: <strong>6.5</strong></p>
+                <p>Recommended pH for crops: <strong>6.0 - 7.0</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Recommendation Tool -->
+    <section class="container mx-auto py-10">
+        <h2 class="text-3xl font-bold text-center mb-6">Crop Recommendations</h2>
+        <div class="card bg-white p-6">
+            <h3 class="text-xl font-bold mb-4">Based on your soil conditions, we recommend:</h3>
+            <ul class="list-disc ml-5">
+                <li><strong>Wheat</strong> - Suited for soil with moisture between 40%-50% and pH 6.0 - 7.0</li>
+                <li><strong>Barley</strong> - Optimal for pH 6.2 - 6.8 and moderate moisture levels</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="container mx-auto py-10">
+        <h2 class="text-3xl font-bold text-center mb-6">Soil Conditions Map</h2>
+        <div id="map" class="map-container"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 text-center">
+        <p>©2024 Team Proborton. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts for Google Maps Integration -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyy51Iek_jpKOc_nzC4hPU28jVRz-5paI&callback=initMap" async defer></script>
+    <script>
+        // Soil condition data (mock data)
+        var soilData = [
+            { lat: 23.8103, lng: 90.4125, moisture: '45%', pH: '6.5', region: 'Region 1' },
+            { lat: 22.3569, lng: 91.7832, moisture: '40%', pH: '6.2', region: 'Region 2' }
+        ];
+
+        // Initialize and add the map
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 6,
+                center: { lat: 23.6850, lng: 90.3563 } // Set initial view to Bangladesh
+            });
+
+            // Add markers to the map
+            soilData.forEach(function (data) {
+                var marker = new google.maps.Marker({
+                    position: { lat: data.lat, lng: data.lng },
+                    map: map,
+                    title: data.region
+                });
+
+                var infoWindow = new google.maps.InfoWindow({
+                    content: `<strong>${data.region}</strong><br>Moisture: ${data.moisture}<br>pH: ${data.pH}`
+                });
+
+                marker.addListener('click', function () {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
