@@ -31,11 +31,7 @@ FarmBuddy provides farmers with the tools and insights needed to enhance product
    - AI-based detection of plant diseases from uploaded images.
    - Detailed reports on disease types and suggested treatments.
 
-4. **Pest Control Hardware Integration**
-   - Integration with pest control devices to monitor performance and pest activity.
-   - Recommendations for pest management based on real-time data.
-
-5. **Land Utilization and Economic Growth**
+4. **Land Utilization and Economic Growth**
    - Marketplace for landowners to list unused fertile land.
    - Search and filter options for finding land based on location and fertility.
    - Secure system for leasing or renting land.
