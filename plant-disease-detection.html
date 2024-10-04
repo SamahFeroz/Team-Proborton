@@ -78,35 +78,59 @@ body > .container {
                 reader.onload = function (e) {
                     document.getElementById('upload-preview').src = e.target.result;
                     document.getElementById('upload-preview').classList.remove('hidden');
-                }
+                };
                 reader.readAsDataURL(file);
             }
         });
-
+    
         document.getElementById('analyzeButton').addEventListener('click', function () {
             const fileInput = document.getElementById('imageUpload');
             if (fileInput.files.length === 0) {
                 alert("Please upload an image first.");
                 return;
             }
-
+    
             // Show the loader
             document.getElementById('loader').classList.remove('hidden');
             document.getElementById('analyzeButton').disabled = true;
-
-            // Simulate AI processing
-            setTimeout(function () {
+    
+            // Create FormData object to send the file
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+    
+            // Send the file to the Flask backend
+            fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Hide the loader
                 document.getElementById('loader').classList.add('hidden');
+    
+                // Display results
                 document.getElementById('reportSection').classList.remove('hidden');
-
-                // Display dummy results (to be replaced with actual AI response)
-                document.getElementById('diseaseName').textContent = "Powdery Mildew";
-                document.getElementById('treatment').textContent = "Use fungicides such as sulfur-based products, and improve airflow around plants.";
-
+                document.getElementById('diseaseName').textContent = data.disease;
+                document.getElementById('treatment').textContent = data.treatment;
+    
                 // Re-enable the analyze button
                 document.getElementById('analyzeButton').disabled = false;
-            }, 3000); // Simulate a 3 second delay for AI processing
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("An error occurred: " + error.message);
+    
+                // Hide the loader and re-enable the analyze button
+                document.getElementById('loader').classList.add('hidden');
+                document.getElementById('analyzeButton').disabled = false;
+            });
         });
     </script>
+    
 </body>
 </html>
